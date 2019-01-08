@@ -1,0 +1,308 @@
+<html>
+   <head>
+      <title></title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+      <script type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js">
+      </script>
+      <script type = "text/javascript" src = "https://www.google.com/jsapi">
+      </script>
+      <script type = "text/javascript">
+         google.charts.load('current', {packages: ['treemap']});     
+      </script>
+        <link rel="stylesheet" src="{{url_for('static', filename='d3Style.css')}}">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+   </head>
+   
+   <body>
+<div class="container">            
+         <div class="jumbotron">
+               <h1><center>Illustrating Economic Indicators: Visualizing the Global Economy in Recent Years</center></h1> 
+               <br>
+               <h6>Indicators utilized in the visualizations consist of Gross Domestic Product to track a nation's wealth, Consumer Price Index growth to measure inflation, global unemployment rates, Official Developmental Assistance metrics to monitor global aid, and the Human Development Index to quantify nation "development".</h6>
+                  <br>
+                  <p class="font-italic">
+                  The data may be found among the tables <a style="color: lightseagreen" href="http://wdi.worldbank.org/tables" target="_blank">here</a>. Thank you World Bank!
+             </p>
+         </div>
+
+         <div class="row">
+
+               <div class="col-2">
+               </div>
+            
+               <div class="col-8">
+<h5> <center>Some Questions to Consider Include</center></h5>
+<br>
+                     <center><p><b>
+                           <ul class="list-unstyled">
+                                 <li>Does a high GDP relative to the CPI indicate a strong economy?</li>
+                                 <br>
+                                 <li>Is there a “sweet spot” in the middle?</li>
+                                 <br>
+                                 <li>How do countries that appear well off really line up?</li><br>
+                           </ul>
+         
+                              </b></p></center>
+               </div>
+
+               
+                  <div class="col-2">
+                  </div>
+               </div>
+
+
+         <div class="jumbotron">
+               <h3><center>A Snapshot of the Global Cost of Living</center></h3> 
+               <h5><center>Using CPI to Track Living Costs</center></h5>
+               <!-- Number of Countries and year include in jumbotron -->
+                  <br>
+             <p class="font-italic">
+                  The economy of 159 countries for the year 2016 is visualized using three factors: <a style="color: lightseagreen" href="https://data.worldbank.org/indicator/NY.GDP.MKTP.CD" target="_blank">GDP</a>, <a style="color: lightseagreen" href="https://data.worldbank.org/indicator/FP.CPI.TOTL" target="_blank">CPI</a>, and the <a style="color: lightseagreen" href="https://data.worldbank.org/indicator/SP.POP.TOTL" target="_blank">country's population</a>. <br>
+             </p>
+         </div>
+
+         <div class="row">
+             <div class="col-2">
+             </div>
+
+             <div class="col-8"><center>
+                  <div id="scatter">
+                        <!-- We append our chart here. -->
+                      </div>
+                  </center>
+             </div>
+
+             <div class="col-2">
+             </div>
+         </div>
+
+         <div class="row">
+               <div class="col-2">
+               </div>
+  
+               <div class="col-8">
+                    <h4><br><center></center></h4>
+                    <br>
+                    <p> 
+                        Countries such as the United States, China, and Japan residing in the top left quarter of the plot with high GDP and low CPI are economically prosperous while countries in the bottom left quarter with low GDP and low CPI are economically disadvantaged. The countries on the top right have higher CPI generally due to growth inflation while those in the bottom right exhibit symptoms of stagflation. No conclusions can be drawn on the relationship between total population and economic prosperity.               
+                  </p>
+               </div>
+  
+               <div class="col-2">
+               </div>
+           </div>
+           <div class="jumbotron">
+               <h3><center>Analyzing the 2016 Labor Market with respect to Gender</center></h3>
+                  <br>
+                  <br>The percentage of male and female unemployment in the labor market is collected and compiled by national authorities and by international development agencies, including the World Bank. The collaboration of thematic and statistical experts across these organizations helps ensure that the data is robust, reliable, and timely.
+                  <br><br><p class="font-italic">Source: The World Bank, World Development Indicators: <a style="color: lightseagreen" href="http://wdi.worldbank.org/table/2.5" target = "_blank"> Unemployment </a>
+             </p>
+         </div>
+
+         <div class="row">
+             <div class="col-12"><center>
+                  <div id="hbar"></div>
+                  </center>
+             </div>
+         </div>
+
+         <div class="row">
+               <div class="col-2">
+               </div>
+  
+               <div class="col-8"><center>
+                  <br>
+                    <h4>Insights</h4></center>
+                    <br>
+                    <p>The data shows unemployed females generally represent a larger percentage of the labor market.  This is seen across multiple global regions, notably in the Middle East and Africa as well as Latin America and the Caribbean.  The Middle East also has the highest percentage of male unemployment.  Asia and North America show the lowest unemployment rates for both male and females.  Country income does not impact unemployment as drastic as region.  Across all country income classes, unemployment ranges between 4% - 6.5%.  Eswatini has the highest rate of male unemployment (25.9%) while the West Bank and Gaza has the highest rate of female unemployment (44.7%).</p>
+               </div>
+  
+               <div class="col-2">
+               </div>
+           </div>
+
+         <!-- <div class="container"> -->
+               <div class="jumbotron">
+                 <h3><center>International Aid</center></h3> 
+                 <h5><center>Investigating the International Aid Landscape</center></h5>
+                    <br>
+
+                <p class="font-italic"> Data used is for the years 2015 and 2016 and utilizes the <a style="color: lightseagreen" href="https://en.wikipedia.org/wiki/Official_development_assistance" target="_blank">Official Developmental Aid</a> metric and the <a style="color: lightseagreen" href="https://en.wikipedia.org/wiki/Human_Development_Index" target="_blank">Human Development Index</a>. 
+                    <br>
+
+               </p>
+               </div>
+             <!-- </div> -->
+
+
+   <div class="row">
+
+   <div class="col-1">
+   </div>
+
+   <div class="col-5">
+   <center><p><b> Estimated Total Official Developmental Assistance in 2015 of the Regions that Received at least 5 Million in Aid</b></p></center>
+   </div>
+   <div class="col-5">
+         <center><p><b> Estimated Total Official Developmental Assistance in 2016 of the Regions that Received at least 5 Million in Aid</b></p></center>
+   </div>
+   
+      <div class="col-1">
+      </div>
+   </div>
+
+   <div class="row">
+         <div class="col-1">
+
+         </div>
+
+         <div class = "col-5">
+               <div id = "2015_Total">
+            <script type="text/javascript" language="javascript" src="{{url_for('static', filename='ODA_2015.js')}}"></script>
+               </div>
+         </div>
+
+         <div class="col-5">
+               <div id = "2016_Total">
+                     <script type="text/javascript" language="javascript" src="{{url_for('static', filename='ODA_2016.js')}}"></script>
+                        </div>
+            
+         </div>
+         
+         <div class="col-1">
+         </div>
+      </div>
+
+
+      <div class="row">
+            <div class="col-2"></div>
+               <div class="col-8">
+                  <br>
+                  <br>
+<p> Here we have a breakdown of the total ODA various regions received. Feel free to click on a region to see a breakdown of the countries within the region. 
+   
+   <br>
+<br>   
+   Notice how the Sub-Saharan Africa category dwarfs the others. This plays into an interesting phenomenon in the next pair of graphs.                 <br>
+                                       </p>
+               </div>
+               <div class="col-2">
+               </div>
+               </div>
+<br>
+<br>
+<br>
+         <div class="row">
+
+               <div class="col-1">
+               </div>
+            
+               <div class="col-5">
+               <center><p><b> Official Developmental Aid per Capita in 2015 of the Regions that Received atleast 5$ of Aid per Capita in USD</b></p></center>
+               </div>
+               <div class="col-5">
+                     <center><p><b> Official Developmental Aid per Capita in 2016 of the Regions that Received atleast 5$ of Aid per Capita in USD</b></p></center>
+               </div>
+               
+                  <div class="col-1">
+                  </div>
+               </div>
+
+               <div class="row">
+                  <div class="col-1">
+                  </div>
+               
+      
+                  <div class = "col-5">
+                        <div id = "2015_PerCapita">
+                     <script type="text/javascript" language="javascript" src="{{url_for('static', filename='ODA_PC_2015.js')}}"></script>
+                        </div>
+                  </div>
+      
+                  <div class="col-5">
+                        <div id = "2016_PerCapita">
+                     <script type="text/javascript" language="javascript" src="{{url_for('static', filename='ODA_PC_2016.js')}}"></script>
+                        </div>
+                  </div>
+                  
+                  <div class="col-1">
+                  </div>
+               </div>
+
+
+            
+               <div class="row">
+                     <div class="col-2"></div>
+                        <div class="col-8">
+                           <br>
+                           <br>
+                           <p>Here we have the aid per capita received by each country. The interesting part about these is how although Sub-Saharan Africa received substantially more aid than the other regions, when it comes to the per capita, other areas are on par with East Asia being even higher. This implies two things. 
+                              <br><br>
+                              The first thing is the major impact population size can have on individuals receiving aid. 
+                              <br><br>
+                              The second thing is that some form of disaster likely hit in 2015 and 2016 which specifically battered many of the Asian island nations. Sure enough, this two year span had its fair share of tsunamis and other natural disasters.
+                              </p>
+                        </div>
+                        <div class="col-2">
+                        </div>
+                        </div>
+            <br>
+            <br>
+<!-- <div class="col-1"></div> -->
+<div class="row">
+<div class="col-6">
+   <p><b><center>Aid Level Brackets (Partitioned into Three Categories) and Development - 2015</center></b></p>
+</div>
+<div class="col-6">
+<b><p><center>Aid Level Brackets (Partitioned into Three Categories) and Development - 2016</center></p></b>
+</div>
+</div>
+<div class="row">
+      <div class="col-6">
+      <div id="sankey_basic_1"> 
+         <script type="text/javascript" language="javascript" src="{{url_for('static', filename='HDI_2015.js')}}"></script>
+      </div>
+      </div>
+      <div class="col-6">
+         <div id="sankey_basic_2">
+      <script type="text/javascript" language="javascript" src="{{url_for('static', filename='HDI_2016.js')}}"></script>
+      </div>            
+      </div>
+      </div>
+      <div class="row">
+         <div class="col-2"></div>
+            <div class="col-8">
+               <br>
+               <br>
+               <p>Here we can see that higher levels of aid are generally given to companies scoring lower on the HDI. It appears that few countries scoring high on the HDI receive aid - only four received a low level and only one received a medium level.
+                  <br>
+                  <br>
+                  There weren't many significant changes in 2016. The only notable change was that four more countries with medium development received a high level of aid.
+               </p>
+            </div>
+            <div class="col-2">
+            </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <p><center>Have any questions or just want to connect? Feel free to follow us on Github!
+               <br>
+               <br>
+               <a style="color: lightseagreen" href="https://github.com/ghosh034" target="_blank">Atishya Ghosh</a> 
+               <br>
+               <a style="color: lightseagreen" href="https://github.com/mobermire" target="_blank">Michael Obermire</a> 
+               <br>
+               <a style="color: lightseagreen" href="https://github.com/rgorowsky" target="_blank">Robert Gorowsky</a> 
+               <br>
+               <a style="color: lightseagreen" href="https://github.com/ZohaibS" target="_blank">Zohaib Syed</a> 
+            </center></p>
+         <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+         <script src="https://d3js.org/d3.v5.min.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+         <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+         <script type="text/javascript" language="javascript" src="{{url_for('static', filename='UnemploymentBars.js')}}"></script>
+         <script type="text/javascript" language="javascript" src="{{url_for('static', filename='CPI_and_GDP.js')}}"></script>
+</div>
+      </body>
+</html>   
