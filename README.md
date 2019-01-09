@@ -2,7 +2,7 @@ Deployed.
 
 Check it out at https://economic-analyses.herokuapp.com/
 
-For some of the older drafts or a look at the initial scrape, take a gander at https://github.com/ZohaibS/EconomicAnalysesRaw
+For some of the older drafts or a look at the initial scrape, take a look at https://github.com/ZohaibS/EconomicAnalysesRaw
 
 What is going on? 
 
