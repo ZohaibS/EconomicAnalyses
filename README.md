@@ -2,6 +2,8 @@ Deployed.
 
 Check it out at https://economic-analyses.herokuapp.com/
 
+For some of the older drafts or a look at the initial scrape, take a gander at https://github.com/ZohaibS/EconomicAnalyses 
+
 What is going on? 
 
          World bank data was scraped via splinter and then cleaned. 
